@@ -7,7 +7,7 @@
 //
 
 #import "LJViewController.h"
-
+#import "JTLoadingView.h"
 @interface LJViewController ()
 
 @end
@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [JTLoadingView jt_loadingShow:self.view];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

@@ -1,0 +1,6 @@
+framework module LJTestPods {
+  umbrella header "LJTestPods-umbrella.h"
+
+  export *
+  module * { export * }
+}
