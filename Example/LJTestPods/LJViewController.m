@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor yellowColor];
     [JTLoadingView jt_loadingShow:self.view];
 	// Do any additional setup after loading the view, typically from a nib.
 }

@@ -7,7 +7,10 @@
 //
 
 #import "JTLoadingView.h"
-//#import "head.h"
+#define JT_MYBUNDLE_NAME   @"JT_H5OpenAccountImages.bundle"
+#define JT_MYBUNDLE_PATH   [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:JT_MYBUNDLE_NAME]
+#define JT_MYBUNDLE        [NSBundle bundleWithPath:JT_MYBUNDLE_PATH]
+#define JT_VideoImagePathWithName(name) [JT_MYBUNDLE_PATH stringByAppendingPathComponent:name]
 
 JTLoadingView *_loadingView;
 
@@ -23,9 +26,9 @@ JTLoadingView *_loadingView;
         self.backgroundColor = [UIColor clearColor];
         self.loadingImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
         self.loadingImg.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
-//        self.loadingImg.image = [UIImage imageNamed:JT_VideoImagePathWithName(@"JTloadingImage")];
-        self.loadingImg.backgroundColor = [UIColor redColor];
+        self.loadingImg.image = [UIImage imageNamed:JT_VideoImagePathWithName(@"JTloadingImage")];
         self.loadingImg.contentMode = UIViewContentModeScaleAspectFit;
+        self.loadingImg.backgroundColor = [UIColor redColor];
         [self addSubview:self.loadingImg];
     }
     return self;
