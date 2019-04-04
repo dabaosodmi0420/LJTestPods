@@ -19,7 +19,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'LJTestPods'
 ```
-## 创建pod
+## 创建pod公有库
 1、打开终端，进入到要建立私有库工程的目录，执行pod lib create 你的工程名称，之后回答几个问题
 ```
 What platform do you want to use?? [ iOS / macOS ]
@@ -86,6 +86,13 @@ git push --tags
 git push origin master
 pod trunk push LJTestPods.podspe --allow-warnings
 
+//pod search 
+pod search LJTestPods
+//报错 Unable to find a pod with name, author, summary, or description matching
+pod setup 
+//删除 ~/Library/Caches/CocoaPods 目录下的 search_index.json 文件 
+rm ~/Library/Caches/CocoaPods/search_index.json
+pod search LJTestPods
 ```
 
 
