@@ -31,9 +31,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LJTestPods/Classes/**/*'
-    s.resource_bundles = {
-      'LJTestPods' => ['LJTestPods/Assets/Resource/*.png']
-    }
+  s.resource_bundles = {
+    'Resource' => ['LJTestPods/Assets/Resource/*.png']
+  }
 
    s.public_header_files = 'LJTestPods/Classes/**/*.h'
    s.frameworks = 'UIKit'
