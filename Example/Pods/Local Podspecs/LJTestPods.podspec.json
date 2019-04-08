@@ -21,14 +21,8 @@
   "source_files": "LJTestPods/Classes/**/*",
   "resource_bundles": {
     "Resource": [
-      "LJTestPods/Assets/Resource/*.*"
+      "LJTestPods/Assets/Resource/*.xcassets"
     ]
   },
-  "public_header_files": "LJTestPods/Classes/**/*.h",
-  "frameworks": "UIKit",
-  "libraries": [
-    "stdc++",
-    "stdc++.6",
-    "c++"
-  ]
+  "frameworks": "UIKit"
 }
