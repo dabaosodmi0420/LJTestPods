@@ -31,12 +31,20 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LJTestPods/Classes/**/*'
-  s.resource = 'LJTestPods/Assets/resource/JT_H5OpenAccountImages.bundle'
-   # s.resource_bundles = {
-   #   'LJTestPods' => ['LJTestPods/Assets/resource/JT_H5OpenAccountImages.bundle']
-   # }
+    s.resource_bundles = {
+      'Resource' => ['LJTestPods/Assets/Resource/*.png']
+    }
 
-   s.public_header_files = 'Pod/Classes/**/*.h'
+   s.public_header_files = 'LJTestPods/Classes/**/*.h'
    s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+   s.libraries = "stdc++", "stdc++.6", "c++" # 依赖的 C 库
+#   s.subspec 'Controller' do |vc|
+#       vc.source_files = 'ZXJTOpenAccount/Classes/OpenAccountCode/OldH5OpenAccount/ViewController/**/*',
+#       'ZXJTOpenAccount/Classes/OpenAccountCode/NewH5OpenAccount/ViewController/**/*'
+#       vc.public_header_files = 'ZXJTOpenAccount/Classes/OpenAccountCode/OldH5OpenAccount/ViewController/**/*.h',
+#       'ZXJTOpenAccount/Classes/OpenAccountCode/NewH5OpenAccount/ViewController/**/*.h'
+#   end
+#   自己添加的 framework 库
+#   s.vendored_frameworks = 'ZXJTOpenAccount/Classes/OpenAccountSDK/ZXJTBaseFramework.framework'
+#   s.dependency 'AFNetworking', '~> 2.3'
 end

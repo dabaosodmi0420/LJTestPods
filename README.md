@@ -94,6 +94,37 @@ pod setup
 rm ~/Library/Caches/CocoaPods/search_index.json
 pod search LJTestPods
 ```
+9、添加资源文件
+注：oc工程的podfile一般是不使用use_frameworks!的，swift和自己创建的lib库是默认有的，关于这两点的差异，如果不使用framework，pod里的资源文件会被打成bundle放在mainbundle下面，由于开发中每个pod库对于use_frameworks!的使用情况不一样，我们在设计工具类的时候要两者兼容。
+```
+- (NSString *)imagePathWithName:(NSString *)imageName bundleName:(NSString *)bundleName{
 
+if(bundleName == nil || imageName == nil){
+@throw @"imageName 和 bundleName 不能为空";
+}
+if ([bundleName containsString:@".bundle"]) {
+bundleName = [bundleName componentsSeparatedByString:@".bundle"].firstObject;
+}
+// Podfile 文件中没有使用 use_frameworks!
+NSURL *bundelUrl = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
+// Podfile 文件中使用了 use_framework!
+if (!bundelUrl) {
+bundelUrl = [[NSBundle mainBundle] URLForResource:@"Frameworks" withExtension:nil];
+bundelUrl = [bundelUrl URLByAppendingPathComponent:@"LJTestPods"];//是pod的名字
+bundelUrl = [bundelUrl URLByAppendingPathExtension:@"framework"];
+NSBundle *bundle = [NSBundle bundleWithURL:bundelUrl];
+bundelUrl = [bundle URLForResource:bundleName withExtension:@"bundle"];
+}
+NSAssert(bundelUrl, @"获取不到bundle");
+if (bundelUrl) {
+NSBundle *bundle = [NSBundle bundleWithURL:bundelUrl];
+NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
+NSLog(@"%@",imagePath);
+return imagePath;
+}else{
+return @"";
+}
+}
+```
 
 

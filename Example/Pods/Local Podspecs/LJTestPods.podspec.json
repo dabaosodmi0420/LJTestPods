@@ -19,7 +19,17 @@
     "ios": "8.0"
   },
   "source_files": "LJTestPods/Classes/**/*",
-  "resources": "LJTestPods/Assets/resource/JT_H5OpenAccountImages.bundle",
-  "public_header_files": "Pod/Classes/**/*.h",
-  "frameworks": "UIKit"
+  "resources": "LJTestPods/Class/JT_H5OpenAccountImages.bundle",
+  "resource_bundles": {
+    "Resource": [
+      "LJTestPods/Assets/Resource/*.png"
+    ]
+  },
+  "public_header_files": "LJTestPods/Classes/**/*.h",
+  "frameworks": "UIKit",
+  "libraries": [
+    "stdc++",
+    "stdc++.6",
+    "c++"
+  ]
 }

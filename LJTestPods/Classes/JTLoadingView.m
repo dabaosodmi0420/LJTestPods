@@ -7,10 +7,6 @@
 //
 
 #import "JTLoadingView.h"
-#define JT_MYBUNDLE_NAME   @"JT_H5OpenAccountImages.bundle"
-#define JT_MYBUNDLE_PATH   [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:JT_MYBUNDLE_NAME]
-#define JT_MYBUNDLE        [NSBundle bundleWithPath:JT_MYBUNDLE_PATH]
-#define JT_VideoImagePathWithName(name) [JT_MYBUNDLE_PATH stringByAppendingPathComponent:name]
 
 JTLoadingView *_loadingView;
 
@@ -26,12 +22,42 @@ JTLoadingView *_loadingView;
         self.backgroundColor = [UIColor clearColor];
         self.loadingImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
         self.loadingImg.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
-        self.loadingImg.image = [UIImage imageNamed:JT_VideoImagePathWithName(@"JTloadingImage")];
+        
+        //JT_H5OpenAccountImage Resource
+        self.loadingImg.image = [UIImage imageNamed:[self imagePathWithName:@"JTWebloading" bundleName:@"Resource"]];
         self.loadingImg.contentMode = UIViewContentModeScaleAspectFit;
-        self.loadingImg.backgroundColor = [UIColor redColor];
+//        self.loadingImg.backgroundColor = [UIColor redColor];
         [self addSubview:self.loadingImg];
     }
     return self;
+}
+- (NSString *)imagePathWithName:(NSString *)imageName bundleName:(NSString *)bundleName{
+    
+    if(bundleName == nil || imageName == nil){
+        @throw @"imageName 和 bundleName 不能为空";
+    }
+    if ([bundleName containsString:@".bundle"]) {
+        bundleName = [bundleName componentsSeparatedByString:@".bundle"].firstObject;
+    }
+    // Podfile 文件中没有使用 use_frameworks!
+    NSURL *bundelUrl = [[NSBundle mainBundle] URLForResource:bundleName withExtension:@"bundle"];
+    // Podfile 文件中使用了 use_framework!
+    if (!bundelUrl) {
+        bundelUrl = [[NSBundle mainBundle] URLForResource:@"Frameworks" withExtension:nil];
+        bundelUrl = [bundelUrl URLByAppendingPathComponent:@"LJTestPods"];//是pod的名字
+        bundelUrl = [bundelUrl URLByAppendingPathExtension:@"framework"];
+        NSBundle *bundle = [NSBundle bundleWithURL:bundelUrl];
+        bundelUrl = [bundle URLForResource:bundleName withExtension:@"bundle"];
+    }
+    NSAssert(bundelUrl, @"获取不到bundle");
+    if (bundelUrl) {
+        NSBundle *bundle = [NSBundle bundleWithURL:bundelUrl];
+        NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];
+        NSLog(@"%@",imagePath);
+        return imagePath;
+    }else{
+        return @"";
+    }
 }
 - (void)startAnimation{
     // 对Y轴进行旋转
