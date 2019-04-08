@@ -24,7 +24,7 @@ JTLoadingView *_loadingView;
         self.loadingImg.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
         
         //JT_H5OpenAccountImage Resource
-        self.loadingImg.image = [UIImage imageNamed:[self imagePathWithName:@"JTWebloading" bundleName:@"LJTestPods"]];
+        self.loadingImg.image = [UIImage imageNamed:[self imagePathWithName:@"JTWebloading" bundleName:@"JT_H5OpenAccountImage"]];
         self.loadingImg.contentMode = UIViewContentModeScaleAspectFit;
 //        self.loadingImg.backgroundColor = [UIColor redColor];
         [self addSubview:self.loadingImg];
@@ -50,6 +50,7 @@ JTLoadingView *_loadingView;
         bundelUrl = [bundle URLForResource:bundleName withExtension:@"bundle"];
     }
     NSAssert(bundelUrl, @"获取不到bundle");
+    NSLog(@"%@",bundelUrl);
     if (bundelUrl) {
         NSBundle *bundle = [NSBundle bundleWithURL:bundelUrl];
         NSString *imagePath = [bundle pathForResource:imageName ofType:@"png"];

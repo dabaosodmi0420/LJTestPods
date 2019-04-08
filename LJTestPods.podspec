@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'LJTestPods/Classes/**/*'
+  s.resource = 'LJTestPods/JT_H5OpenAccountImage.bundle'
   s.resource_bundles = {
     'LJTestPods' => ['LJTestPods/Assets/LJTestPods/*.png']
   }

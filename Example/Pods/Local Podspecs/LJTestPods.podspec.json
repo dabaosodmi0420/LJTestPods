@@ -1,6 +1,6 @@
 {
   "name": "LJTestPods",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": "A short description of LJTestPods.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/dabaosodmi0420/LJTestPods",
@@ -13,12 +13,13 @@
   },
   "source": {
     "git": "https://github.com/dabaosodmi0420/LJTestPods.git",
-    "tag": "0.1.2"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "LJTestPods/Classes/**/*",
+  "resources": "LJTestPods/JT_H5OpenAccountImage.bundle",
   "resource_bundles": {
     "LJTestPods": [
       "LJTestPods/Assets/LJTestPods/*.png"
