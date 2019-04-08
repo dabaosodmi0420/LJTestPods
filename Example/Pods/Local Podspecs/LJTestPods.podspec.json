@@ -21,7 +21,7 @@
   "source_files": "LJTestPods/Classes/**/*",
   "resource_bundles": {
     "Resource": [
-      "LJTestPods/Assets/Resource/*.png"
+      "LJTestPods/Assets/Resource/*.*"
     ]
   },
   "public_header_files": "LJTestPods/Classes/**/*.h",

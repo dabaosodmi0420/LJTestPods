@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'LJTestPods/Classes/**/*'
   s.resource_bundles = {
-    'Resource' => ['LJTestPods/Assets/Resource/*.png']
+    'Resource' => ['LJTestPods/Assets/Resource/*.*']
   }
 
    s.public_header_files = 'LJTestPods/Classes/**/*.h'
