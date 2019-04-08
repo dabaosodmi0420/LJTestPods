@@ -1,5 +1,5 @@
 PODS:
-  - LJTestPods (0.1.1)
+  - LJTestPods (0.1.2)
 
 DEPENDENCIES:
   - LJTestPods (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LJTestPods: 436c92b08eb9830cf49a72d501d03c184580d750
+  LJTestPods: af03859edd667b4cdd58b6e45ad085679f6ddb70
 
 PODFILE CHECKSUM: 4ef649feec83878b5663722ebcb4a50a29bf4fee
 
