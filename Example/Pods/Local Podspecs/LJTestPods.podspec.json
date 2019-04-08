@@ -19,9 +19,8 @@
     "ios": "8.0"
   },
   "source_files": "LJTestPods/Classes/**/*",
-  "resources": "LJTestPods/Class/JT_H5OpenAccountImages.bundle",
   "resource_bundles": {
-    "Resource": [
+    "LJTestPods": [
       "LJTestPods/Assets/Resource/*.png"
     ]
   },

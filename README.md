@@ -78,13 +78,13 @@ git push origin 0.1.0
 pod lib lint LJTestPods.podspec --allow-warnings
 
 //发布
-pod trunk push LJTestPods.podspe --allow-warnings
+pod trunk push LJTestPods.podspec --allow-warnings
 //出错 [!] Unable to accept duplicate entry for: LJTestPods (0.1.0)
 //适用于版本冲突，重新发布版本
 git tag 0.1.1
 git push --tags
 git push origin master
-pod trunk push LJTestPods.podspe --allow-warnings
+pod trunk push LJTestPods.podspec --allow-warnings
 
 //pod search 
 pod search LJTestPods
