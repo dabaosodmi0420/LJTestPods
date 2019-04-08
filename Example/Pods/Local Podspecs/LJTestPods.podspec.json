@@ -21,7 +21,7 @@
   "source_files": "LJTestPods/Classes/**/*",
   "resource_bundles": {
     "Resource": [
-      "LJTestPods/Assets/Resource/*.xcassets"
+      "LJTestPods/Assets/Resource/*.png"
     ]
   },
   "frameworks": "UIKit"
