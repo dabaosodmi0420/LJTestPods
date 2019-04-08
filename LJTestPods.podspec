@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LJTestPods'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of LJTestPods.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'LJTestPods/Classes/**/*'
   s.resource_bundles = {
-    'Resource' => ['LJTestPods/Assets/Resource/*.png']
+    'LJTestPods' => ['LJTestPods/Assets/LJTestPods/*.png']
   }
 
 #   s.public_header_files = 'LJTestPods/Classes/**/*.h'

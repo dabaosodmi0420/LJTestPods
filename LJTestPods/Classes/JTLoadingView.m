@@ -24,7 +24,7 @@ JTLoadingView *_loadingView;
         self.loadingImg.center = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
         
         //JT_H5OpenAccountImage Resource
-        self.loadingImg.image = [UIImage imageNamed:[self imagePathWithName:@"JTWebloading" bundleName:@"Resource"]];
+        self.loadingImg.image = [UIImage imageNamed:[self imagePathWithName:@"JTWebloading" bundleName:@"LJTestPods"]];
         self.loadingImg.contentMode = UIViewContentModeScaleAspectFit;
 //        self.loadingImg.backgroundColor = [UIColor redColor];
         [self addSubview:self.loadingImg];

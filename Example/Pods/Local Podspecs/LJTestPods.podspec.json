@@ -20,8 +20,8 @@
   },
   "source_files": "LJTestPods/Classes/**/*",
   "resource_bundles": {
-    "Resource": [
-      "LJTestPods/Assets/Resource/*.png"
+    "LJTestPods": [
+      "LJTestPods/Assets/LJTestPods/*.png"
     ]
   },
   "frameworks": "UIKit"
