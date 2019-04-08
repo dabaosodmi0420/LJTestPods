@@ -35,9 +35,9 @@ Pod::Spec.new do |s|
     'Resource' => ['LJTestPods/Assets/Resource/*.*']
   }
 
-   s.public_header_files = 'LJTestPods/Classes/**/*.h'
+#   s.public_header_files = 'LJTestPods/Classes/**/*.h'
    s.frameworks = 'UIKit'
-   s.libraries = "stdc++", "stdc++.6", "c++" # 依赖的 C 库
+#   s.libraries = "stdc++", "stdc++.6", "c++" # 依赖的 C 库
 #   s.subspec 'Controller' do |vc|
 #       vc.source_files = 'ZXJTOpenAccount/Classes/OpenAccountCode/OldH5OpenAccount/ViewController/**/*',
 #       'ZXJTOpenAccount/Classes/OpenAccountCode/NewH5OpenAccount/ViewController/**/*'
